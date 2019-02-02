@@ -1,0 +1,9 @@
+# lines starting with dash (-), hashtag (#) or empty are ignored
+
+### More plugis to add
+https://binaries.sonarsource.com/Distribution/sonar-javascript-plugin/sonar-javascript-plugin-5.0.0.6962.jar
+https://binaries.sonarsource.com/Distribution/sonar-typescript-plugin/sonar-typescript-plugin-1.9.0.3766.jar
+
+# More plugins at https://docs.sonarqube.org/display/PLUG/Plugin+Version+Matrix & http://www.sonarplugins.com/
+# Officials downloads from  https://binaries.sonarsource.com/Distribution/
+-- need file end line

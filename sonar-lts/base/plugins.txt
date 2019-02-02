@@ -1,0 +1,14 @@
+# lines starting with dash (-), hashtag (#) or empty are ignored
+
+https://binaries.sonarsource.com/Distribution/sonar-java-plugin/sonar-java-plugin-5.10.2.17019.jar
+https://binaries.sonarsource.com/Distribution/sonar-scm-git-plugin/sonar-scm-git-plugin-1.7.0.1491.jar
+
+https://github.com/sbaudoin/sonar-yaml/releases/download/v1.4.0/sonar-yaml-plugin-1.4.0.jar
+https://github.com/SonarSource/sonar-xml/releases/download/1.4.3.1017/sonar-xml-plugin-1.4.3.1017.jar
+https://github.com/racodond/sonar-json-plugin/releases/download/2.3/sonar-json-plugin-2.3.jar
+
+https://github.com/acalero/sonar-l10n-es/releases/download/sonar-l10n-es-plugin-1.14/sonar-l10n-es-plugin-1.14.jar
+
+# More plugins at https://docs.sonarqube.org/display/PLUG/Plugin+Version+Matrix & http://www.sonarplugins.com/
+# Officials downloads from  https://binaries.sonarsource.com/Distribution/
+-- need file end line
