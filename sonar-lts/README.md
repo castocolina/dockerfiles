@@ -12,7 +12,7 @@
 -------------
 The base image download sonarqube then remove default bundle plugins and install basics plugins
 
-## Images
+## Images w/ plugins
 
 - Base
     - sonar-java-plugin https://github.com/SonarSource/sonar-java#sonarjava---
