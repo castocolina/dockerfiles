@@ -1,0 +1,17 @@
+sudo: required
+
+language: bash
+
+services:
+  - docker
+
+env:
+  - IMAGE_2_BUILD=lighthttpd
+  - IMAGE_2_BUILD=sonarlts
+
+script:
+  - cd "${IMAGE_2_BUILD}"
+  - ls -la
+
+# notifications:
+#   email: false
