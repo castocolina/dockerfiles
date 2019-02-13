@@ -9,7 +9,10 @@ env:
   - DIR_2_BUILD=lighttpd IMAGE_NAME=lighttpd IMAGE_VERSION=1.4.52
   # - IMAGE_2_BUILD=sonar-lts
 
-before_script:
+# before_script:
+
+
+script:
   - pwd && ls -la
   - cd "${DIR_2_BUILD}"
   - ls -la
@@ -19,8 +22,6 @@ before_script:
   - export DIR_CHANGE=$(git log --name-status HEAD^..HEAD | cat | grep $BASENAME >/dev/null 2>&1)
   - export IMAGE_NAME=${DIR_2_BUILD}
   - export IMAGE_SVERSION=$(echo ${IMAGE_VERSION} | cut -d'.' -f1,2)
-
-script:
   - make build
   - make images
   - make test
