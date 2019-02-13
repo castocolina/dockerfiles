@@ -6,7 +6,7 @@ build:
 	docker build \
     -t $(DOCKER_USER)/$(IMAGE_NAME) -t $(DOCKER_USER)/$(IMAGE_NAME):latest \
     --force-rm --no-cache \
-    -f  $(BASEDIR)/Dockerfile $(BASEDIR)
+    -f  Dockerfile .
 
 # create tag of image with software version
 version-tag:
