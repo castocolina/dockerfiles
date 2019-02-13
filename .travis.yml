@@ -10,7 +10,9 @@ env:
   # - IMAGE_2_BUILD=sonar-lts
 
 before_script:
+  - la -la
   - cd "${DIR_2_BUILD}"
+  - ls -la
   - BASEDIR=$(dirname "$0")
   - export BASEDIR=$(readlink -f $BASEDIR)
   - export BASENAME=$(basename $BASEDIR)
