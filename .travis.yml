@@ -25,6 +25,7 @@ script:
   - make build
   - make images
   - make test
+  - make version-tag
 
 # before_deploy:
 #   provider: script
