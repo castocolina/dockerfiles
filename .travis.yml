@@ -13,9 +13,8 @@ env:
 
 
 script:
-  - pwd && ls -la
   - cd "${DIR_2_BUILD}"
-  - ls -la
+  - pwd & ls -la
   - BASEDIR=$(dirname "$0")
   - export BASEDIR=$(readlink -f $BASEDIR)
   - export BASENAME=$(basename $BASEDIR)
@@ -23,20 +22,21 @@ script:
   - export IMAGE_NAME=${DIR_2_BUILD}
   - export IMAGE_SVERSION=$(echo ${IMAGE_VERSION} | cut -d'.' -f1,2)
   - make build
+  - make version-tag
   - make images
   - make test
 
 before_deploy:
   provider: script
-  script: make version-tag && echo "$DOCKER_PASSWD" | docker login -u "$DOCKER_USER" --password-stdin
+  script: echo "$DOCKER_PASSWD" | docker login -u "$DOCKER_USER" --password-stdin
   on:
     branch: master
 
-# deploy:
-#   provider: script
-#   script: make push
-#   on:
-#     branch: master
+deploy:
+  provider: script
+  script: make push
+  on:
+    branch: master
 
 # after_success:
 #   - if [[ "$TRAVIS_BRANCH" == "master" ]]; then
