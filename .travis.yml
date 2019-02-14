@@ -25,13 +25,12 @@ script:
   - make build
   - make images
   - make test
-  - make version-tag
 
-# before_deploy:
-#   provider: script
-#   script: make version-tag && echo "$DOCKER_PASSWD" | docker login -u "$DOCKER_USER" --password-stdin
-#   on:
-#     branch: master
+before_deploy:
+  provider: script
+  script: make version-tag && echo "$DOCKER_PASSWD" | docker login -u "$DOCKER_USER" --password-stdin
+  on:
+    branch: master
 
 # deploy:
 #   provider: script
