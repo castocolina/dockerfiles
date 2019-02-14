@@ -26,15 +26,9 @@ script:
   - make images
   - make test
 
-before_deploy:
-  provider: script
-  script: echo "$DOCKER_PASSWD" | docker login -u "$DOCKER_USER" --password-stdin
-  on:
-    branch: master
-
 deploy:
   provider: script
-  script: make push
+  script: echo "$DOCKER_PASSWD" | docker login -u "$DOCKER_USER" --password-stdin && make push
   on:
     branch: master
 
@@ -45,5 +39,7 @@ deploy:
 #       make push;
 #     fi
 
-# notifications:
-#   email: false
+notifications:
+  email: 
+    on_success: change # default: change
+    on_failure: always # default: always
