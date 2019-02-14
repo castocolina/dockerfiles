@@ -14,6 +14,8 @@ The base image download sonarqube then remove default bundle plugins and install
 
 ## Images w/ plugins
 
+### SONAR-LTS with preloaded plugis:
+
 - Base
     - sonar-java-plugin https://github.com/SonarSource/sonar-java#sonarjava---
     - sonar-scm-git-plugin https://github.com/SonarSource/sonar-scm-git
@@ -31,5 +33,12 @@ The base image download sonarqube then remove default bundle plugins and install
 - JS
     - sonar-javascript-plugin https://github.com/SonarSource/SonarJS
     - sonar-typescript-plugin https://github.com/SonarSource/SonarTS
+
+
+### USE:
+
+    - Java :TODO
+    - JS :TODO
+
 
 

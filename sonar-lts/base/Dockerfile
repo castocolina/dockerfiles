@@ -22,7 +22,7 @@ ENV SONAR_VERSION=$SONAR_VERSION \
 EXPOSE 9000
 
 RUN groupadd -r sonarqube && useradd -r -g sonarqube sonarqube \
-     && echo "USER >>> $USER at $(pwd)" && echo ">>>>> $DOWNLOAD_URL"
+     && echo ">>>>> '$DOWNLOAD_URL'"
 
 # grab gosu for easy step-down from root
 RUN set -x \

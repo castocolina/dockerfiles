@@ -10,7 +10,6 @@ for FLAVOR in ${IMAGE_FLAVORS[@]}; do
         -t $DOCKER_USER/$IMAGE_NAME:$FLAVOR-$IMAGE_VERSION \
         -t $DOCKER_USER/$IMAGE_NAME:$FLAVOR \
         --build-arg SONAR_VERSION=$IMAGE_VERSION \
-        --build-arg DOWNLOAD_URL=$DOWNLOAD_URL \
         --force-rm --no-cache \
         -f  $FLAVOR/Dockerfile $FLAVOR || exit 1
 done
