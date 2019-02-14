@@ -21,9 +21,9 @@ do
 
     file="$PLUGIN_DIR/$name"
     if [ -f "$file" ]; then
-        printf "  $file ... found.\n"
+        printf "  LOCAL: $file ... found.\n"
     else
-        printf "  $file NOT found.\n"
+        printf "  LOCAL: $file NOT found.\n"
         #--progress-bar
         #curl -o $file -fSL $url
         wget --progress=dot:binary -c -t 3 -P $PLUGIN_DIR "$url" || exit 1

@@ -7,7 +7,7 @@ services:
 
 env:
   - DIR_2_BUILD=lighttpd IMAGE_NAME=lighttpd IMAGE_VERSION=1.4.52
-  # - IMAGE_2_BUILD=sonar-lts
+  - DIR_2_BUILD=sonar-lts IMAGE_NAME=sonar-lts IMAGE_FLAVORS="base java js" IMAGE_VERSION=6.7.6
 
 # before_script:
 
@@ -31,13 +31,6 @@ deploy:
   script: echo "$DOCKER_PASSWD" | docker login -u "$DOCKER_USER" --password-stdin && make push
   on:
     branch: master
-
-# after_success:
-#   - if [[ "$TRAVIS_BRANCH" == "master" ]]; then
-#       make version-tag
-#       echo "$DOCKER_PASSWD" | docker login -u "$DOCKER_USER" --password-stdin
-#       make push;
-#     fi
 
 notifications:
   email: 

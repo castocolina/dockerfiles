@@ -1,1 +1,2 @@
 *.log
+sonar-lts/sonarqube*

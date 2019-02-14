@@ -1,7 +1,10 @@
 FROM openjdk:8
 
+LABEL maintainer="castocolina@gmail.com"
+
 ARG SONAR_VERSION=6.7.6
 ARG RUN_FILE=https://raw.githubusercontent.com/SonarSource/docker-sonarqube/master/${SONAR_VERSION}-community/run.sh
+ARG DOWNLOAD_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip
 
 ENV SONAR_VERSION=$SONAR_VERSION \
     SONARQUBE_HOME=/opt/sonarqube \
@@ -18,7 +21,8 @@ ENV SONAR_VERSION=$SONAR_VERSION \
 # Http port
 EXPOSE 9000
 
-RUN groupadd -r sonarqube && useradd -r -g sonarqube sonarqube && echo "USER >>> $USER at $(pwd)"
+RUN groupadd -r sonarqube && useradd -r -g sonarqube sonarqube \
+     && echo "USER >>> $USER at $(pwd)" && echo ">>>>> $DOWNLOAD_URL"
 
 # grab gosu for easy step-down from root
 RUN set -x \
@@ -42,8 +46,8 @@ RUN set -x \
     && (gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys F1182E81C792928921DBCAB4CFCA4A29D26468DE \
 	    || gpg --batch --keyserver ipv4.pool.sks-keyservers.net --recv-keys F1182E81C792928921DBCAB4CFCA4A29D26468DE) \
     && cd /opt \
-    && curl -o sonarqube.zip -fSL https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip \
-    && curl -o sonarqube.zip.asc -fSL https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip.asc \
+    && curl -o sonarqube.zip -fSL $DOWNLOAD_URL \
+    && curl -o sonarqube.zip.asc -fSL $DOWNLOAD_URL.asc \
     && gpg --batch --verify sonarqube.zip.asc sonarqube.zip \
     && unzip -q sonarqube.zip \
     && mv sonarqube-$SONAR_VERSION sonarqube \

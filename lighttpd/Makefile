@@ -15,6 +15,7 @@ version-tag:
 	IMAGE_VERSION=$(echo $SOFT_VERSION | cut -d' ' -f1 | cut -d'/' -f2)
 	IMAGE_SVERSION=$(echo $IMAGE_VERSION | cut -d'.' -f1,2)
 	echo "VERSIONS ::: $(IMAGE_VERSION)  === $(IMAGE_SVERSION)"
+	
 	docker tag $(DOCKER_USER)/$(IMAGE_NAME) $(DOCKER_USER)/$(IMAGE_NAME):$(IMAGE_VERSION)
 	docker tag $(DOCKER_USER)/$(IMAGE_NAME) $(DOCKER_USER)/$(IMAGE_NAME):$(IMAGE_SVERSION)
 
