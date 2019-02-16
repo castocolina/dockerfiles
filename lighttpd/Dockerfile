@@ -2,7 +2,7 @@ FROM alpine:edge
 
 LABEL maintainer="castocolina@gmail.com"
 
-RUN apk update \
+RUN set -x && apk update \
     && apk add lighttpd \
     && rm -rf /var/cache/apk/*
 

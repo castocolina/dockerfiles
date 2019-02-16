@@ -16,7 +16,7 @@ docker ps | grep local-http && docker rm -f local-http
 docker run -d --rm --name local-http -p 80:80 \
     -v $BASEDIR/$FNAME:/var/www/localhost/htdocs/$FNAME \
     -v $BASEDIR/$FNAME.asc:/var/www/localhost/htdocs/$FNAME.asc \
-    sebp/lighttpd
+    castocolina/lighttpd
 
 URL="http://$(hostname -I | cut -d' ' -f1)/$FNAME"
 URL_EXPORT="export DOWNLOAD_URL=$URL"

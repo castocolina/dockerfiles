@@ -1,5 +1,8 @@
 # docker-sonar-lts
 
+Based on original image. Download sonarqube package then remove bin folder & bundle packages (olds plugins) before install new basics plugins
+
+https://github.com/castocolina/dockerfiles/tree/master/sonar-lts
 
 ### Plugins list
 
@@ -9,12 +12,9 @@
 
  Today (feb 2019) the official download site is https://binaries.sonarsource.com/Distribution/
 
--------------
-The base image download sonarqube then remove default bundle plugins and install basics plugins
+## Images w/ plugins 
 
-## Images w/ plugins
-
-### SONAR-LTS with preloaded plugis:
+**Preloaded plugins:**
 
 - Base
     - sonar-java-plugin https://github.com/SonarSource/sonar-java#sonarjava---
@@ -35,10 +35,10 @@ The base image download sonarqube then remove default bundle plugins and install
     - sonar-typescript-plugin https://github.com/SonarSource/SonarTS
 
 
-### USE:
+### HOW TO USE:
 
-    - Java :TODO
-    - JS :TODO
+- Java :TODO
+- JS :TODO
 
 
 
