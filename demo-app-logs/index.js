@@ -2,13 +2,15 @@ const CronJob = require('cron').CronJob;
 const winston = require('winston');
 const nconf = require('nconf');
 
+nconf.env().argv();
 nconf.defaults({
-    'LOGS_FOLDER': '/var/logs',
+    'LOGS_FOLDER': '/var/log',
     'FILE_NAME': 'output.log',
     'FILE_MAX_SIZE_BYTES': 1024 * 5,
     'MAX_FILES': 100,
     'TAILABLE': true,
   });
+
 
 const LOGS_FOLDER = nconf.get('LOGS_FOLDER');
 const FILE_NAME = nconf.get('FILE_NAME');
