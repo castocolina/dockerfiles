@@ -6,9 +6,10 @@ services:
   - docker
 
 env:
-  - DIR_2_BUILD=lighttpd IMAGE_NAME=lighttpd IMAGE_VERSION=1.4.52
-  - DIR_2_BUILD=sonar-lts IMAGE_NAME=sonar-lts IMAGE_FLAVORS="base java js" IMAGE_VERSION=6.7.6
-  - DIR_2_BUILD=grafana IMAGE_NAME=grafana-bundle IMAGE_VERSION=5.4.3
+  # - DIR_2_BUILD=lighttpd IMAGE_NAME=lighttpd IMAGE_VERSION=1.4.52
+  # - DIR_2_BUILD=sonar-lts IMAGE_NAME=sonar-lts IMAGE_FLAVORS="base java js" IMAGE_VERSION=6.7.6
+  # - DIR_2_BUILD=grafana IMAGE_NAME=grafana-bundle IMAGE_VERSION=5.4.3
+  - DIR_2_BUILD=demo-app-logs IMAGE_NAME=demo-app-logs IMAGE_VERSION=1.0.0
 
 # before_script:
 
