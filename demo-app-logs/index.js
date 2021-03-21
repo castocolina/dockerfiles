@@ -3,7 +3,7 @@ const winston = require('winston');
 const nconf = require('nconf');
 
 nconf.defaults({
-    'LOGS_FOLDER': 'logs',
+    'LOGS_FOLDER': '/var/logs',
     'FILE_NAME': 'output.log',
     'FILE_MAX_SIZE_BYTES': 1024 * 5,
     'MAX_FILES': 100,
